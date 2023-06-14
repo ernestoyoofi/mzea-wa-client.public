@@ -1,4 +1,4 @@
-## Cara menggunakan / membuat bot whatsapp dari client ini
+# Cara menggunakan / membuat bot whatsapp dari client ini
 
 > Sebelumnya, module dari @adiwajshing/Balieys telah dihapus, namun kita dapat menggunakannya [@whiskeysocket/baileys](https://github.com/WhiskeySockets/Baileys)
 
@@ -40,3 +40,30 @@ unzip wa-mzea-client.zip
 rm -rf wa-mzea-client.zip
 ```
 
+## ⚒️ Cara penggunaanya
+
+Pertama tama kamu masukan setup socketnya terlebih dahulu
+
+```js
+// Buat file main.js
+const { WhatsAppSetup } = require("./wa/main")
+
+// Setup Class Function
+const wa = new WhatsAppSetup()
+
+// Ini Setup Agar Dapat Berjalan
+wa.start_run()
+
+wa.on("call", async (e) => {
+  // Panggilan Suara / Video
+})
+wa.on("message", async (e) => {
+  // Pesan masuk / notifikasi
+})
+wa.on("groups.participants", (e) => {
+  // Member masuk / keluar dari grup
+})
+wa.on("groups", (e) => {
+  // Grup update
+})
+```
